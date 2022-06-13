@@ -69,7 +69,7 @@ The installation log will be printed to the screen.In the end you should get the
 # Deploy your Packer AMI image using Terraform
 * get back to root of the repo and go to Terraform directory:
 ```
-cd ../terraform
+cd terraform
 ```
 
 * Initialize Terraform:
