@@ -10,7 +10,7 @@ This repo contains Packer and Terraform configurations to pack and deploy web pa
  
  [homebrew](https://brew.sh/)
 
-### 2. Clone this repo locally to a folder of your choice**
+### 2. Clone this repo locally to a folder of your choice
 ```
 git clone https://github.com/51r/terraform-packer-page.git
 ```
@@ -44,6 +44,10 @@ If you don't have access to IAM user credentials, you can authenticate AWS using
 
 
 # Build your Packer image AMI
+* Go to Packer directory:
+```
+cd packer
+```
 
 * Initialize Packer:
 ```
@@ -63,6 +67,10 @@ The installation log will be printed to the screen.In the end you should get the
 ```
 
 # Deploy your Packer AMI image using Terraform
+* get back to root of the repo and go to Terraform directory:
+```
+cd ../terraform
+```
 
 * Initialize Terraform:
 ```
