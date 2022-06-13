@@ -20,7 +20,7 @@ git clone https://github.com/51r/terraform-packer-page.git
 cd terraform-packer-page
 ```
 
-## 4. Authenticate to AWS:
+## 4. Configure AWS:
 Set your AWS access key ID as an environment variable:
 
 ```
