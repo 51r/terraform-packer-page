@@ -3,9 +3,7 @@ provider "aws" {
 }
 
 variable "ami_id" {
-  type    = string
-  default = "ami-0538d5d3468787d06"
-
+  type = string
 }
 
 resource "aws_security_group" "sg_80" {
