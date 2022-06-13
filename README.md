@@ -8,7 +8,7 @@ This repo contains Packer and Terraform configurations to pack and deploy web pa
 
  [Terraform CLI >0.13](https://learn.hashicorp.com/tutorials/terraform/install-cli)
  
- [homebrew](https://brew.sh/)
+ [Homebrew](https://brew.sh/)
 
 ### 2. Clone this repo locally to a folder of your choice
 ```
