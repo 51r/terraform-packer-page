@@ -1,5 +1,15 @@
+terraform {
+  required_providers {
+    aws = {
+      version = ">= 4.18.0"
+      source  = "hashicorp/aws"
+    }
+  }
+  required_version = "~> v1.1.9"
+}
+
 variable "ami_id" {
-  type    = string
+  type = string
 }
 
 resource "aws_security_group" "sg_80" {
