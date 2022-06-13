@@ -5,7 +5,7 @@ terraform {
       source  = "hashicorp/aws"
     }
   }
-  required_version = "~> v1.1.9"
+  required_version = ">= 1.1.9"
 }
 
 variable "ami_id" {
