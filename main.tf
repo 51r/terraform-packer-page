@@ -1,11 +1,5 @@
-provider "aws" {
-  region = "eu-west-2"
-}
-
 variable "ami_id" {
   type    = string
-  default = "ami-0538d5d3468787d06"
-
 }
 
 resource "aws_security_group" "sg_80" {
