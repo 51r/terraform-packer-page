@@ -1,6 +1,11 @@
 # Page deploy using Packer and Terraform
 
-This repo contains Packer and Terraform configurations to pack and deploy web page.
+This repo contains Packer and Terraform configurations to pack and deploy web page. 
+
+The Terraform configuration deploys EC2 named `Peter-Test` inside 
+
+VPC `peter-vpc` that contains Internet Gateway `peter-gateway`, Subnet `peter-subnet` inside CIDR block 10.0.0.0/16 with Route Table `peter-route_table` and AWS Security group `peter_sg88`.
+
 
 # Prerequisite
 
@@ -84,4 +89,4 @@ terraform apply -var "ami_id=YOUR-AMI-ID-FROM-PACKER"
 
 * The terraform will deploy the AMI and will printout the website IP, as you can see from the screenshot below, I have run curl command to check if the website is available:
 
-<img width="580" alt="Screen Shot 2022-06-13 at 1 43 35 PM" src="https://user-images.githubusercontent.com/52199951/173337056-96819e0f-9467-4360-a4ea-b47f3710c26a.png">
+<img width="785" alt="Screen Shot 2022-06-15 at 3 50 11 PM" src="https://user-images.githubusercontent.com/52199951/173831889-d082c987-055f-4b18-9be3-c6332dd7707b.png">
