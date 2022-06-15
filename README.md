@@ -2,8 +2,14 @@
 
 This repo contains Packer and Terraform configurations to pack and deploy web page. 
 
-The Terraform configuration deploys EC2 named `Peter-Test` inside VPC that contains Internet Gateway, Subnet, CIDR block 10.0.0.0/16, Route Table and AWS Security group for ports 80/8080.
+The Terraform configuration deploys several resources in AWS:
 
+* VPC - Virtual Private Cloud with name `peter-vpc` with CIDR block - `10.0.0.0/16`
+* Internet Gateway - To allow access from outside internet - `peter-gateway`
+* Subnet - Public subnet with CIDR block `10.0.0.0/24` - `peter-subnet`
+* Route Table - It's used to route the subnet to our Internet Gateway `peter-gateway`
+* AWS Security group - allows ports 80/8080 from outside network - `peter_sg80`
+* EC2 - It's used to serve our web page - `Peter-Test`
 
 # Prerequisite
 
