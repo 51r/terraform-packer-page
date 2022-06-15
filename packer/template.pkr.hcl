@@ -17,7 +17,6 @@ source "amazon-ebs" "ubuntu" {
     }
     most_recent = true
     owners      = ["099720109477"]
-    tags = ["Peter-Test"]
     
   }
   ssh_username = "ubuntu"
