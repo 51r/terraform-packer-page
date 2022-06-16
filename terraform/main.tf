@@ -9,8 +9,8 @@ terraform {
 }
 
 
-module "sub" {
-  source      = "./sub"
+module "network" {
+  source      = "./network"
   subnet_cidr = var.subnet_cidr
   email       = var.email
   name        = var.name
@@ -19,12 +19,12 @@ module "sub" {
 
 module "app" {
   source         = "./app"
-  depends_on     = [module.sub]
+  depends_on     = [module.network]
   ami_id         = var.ami_id
   name           = var.name
   email          = var.email
-  subnet         = module.sub.subnet
-  security_group = module.sub.security_group
+  subnet         = module.network.subnet
+  security_group = module.network.security_group
 }
 
 
