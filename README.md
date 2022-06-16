@@ -4,15 +4,15 @@ This repo contains Packer and Terraform configurations to pack and deploy web pa
 
 The Terraform configuration deploys several resources in AWS:
 
-* VPC - Virtual Private Cloud with name `test-vpc` with CIDR block - `10.0.0.0/16` (configured in the variables.tf)
-* Internet Gateway - To allow access from outside internet - `test-gateway`
-* Subnet - Public subnet with CIDR block `10.0.0.0/24`(configured in the variables.tf)  - `test-subnet` 
-* Route Table - It's used to route the subnet to our Internet Gateway `test-gateway`
-* AWS Security group - allows ports 80/8080 from outside network - `test_sg80`
-* EC2 - It's used to serve our web page - `test-ec2`
+* VPC - Virtual Private Cloud with name `Peter-vpc` with CIDR block - `10.0.0.0/16` (configured in the variables.tf)
+* Internet Gateway - To allow access from outside internet - `Peter-gateway`
+* Subnet - Public subnet with CIDR block `10.0.0.0/24`(configured in the variables.tf)  - `Peter-subnet` 
+* Route Table - It's used to route the subnet to our Internet Gateway `Peter-gateway`
+* AWS Security group - allows ports 80/8080 from outside network - `Peter_sg80`
+* EC2 - It's used to serve our web page - `Peter-ec2`
 
 
-**There is an additional variable "email" which adds a tag to every resource created in AWS for easy recognition.**
+**There are additional variables "email" and "name" which adds tags to every resource created in AWS for easy recognition.**
 
 # Prerequisite
 
