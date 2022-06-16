@@ -1,8 +1,3 @@
-variable "ami_id" {
-  type        = string
-  description = "Specify AMI ID output from Packer"
-}
-
 variable "subnet_cidr" {
   type        = string
   description = "Specify CIDR Block for Subnet"
@@ -22,6 +17,7 @@ variable "name" {
   type        = string
   description = "Specify the prefix name for the AWS resources"
 }
+
 
 resource "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr
