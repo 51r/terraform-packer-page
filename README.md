@@ -86,10 +86,12 @@ cd terraform
 terraform init
 ```
 
-* Make sure that you have added your var when applying the plan:
+* Apply the plan:
 ```
-terraform apply -var "ami_id=YOUR-AMI-ID-FROM-PACKER"
+terraform apply
 ```
+**Make sure that you have added your vars before applying the plan**
+
 
 * The terraform will deploy the AMI and will printout the website IP, as you can see from the screenshot below, I have run curl command to check if the website is available:
 
