@@ -8,29 +8,26 @@ terraform {
   required_version = ">= 1.1.9"
 }
 
-module "vpc" {
-  source      = "./vpc"
-  ami_id      = var.ami_id
+
+module "sub" {
+  source      = "./sub"
   subnet_cidr = var.subnet_cidr
   email       = var.email
   name        = var.name
   vpc_cidr    = var.vpc_cidr
 }
 
-resource "aws_instance" "web" {
-  depends_on                  = [module.vpc]
-  ami                         = var.ami_id
-  instance_type               = "t2.micro"
-  subnet_id                   = module.vpc.subnet
-  vpc_security_group_ids      = [module.vpc.security_group]
-  associate_public_ip_address = true
-
-  tags = {
-    Name  = "${var.name}-ec2"
-    email = var.email
-  }
+module "app" {
+  source         = "./app"
+  depends_on     = [module.sub]
+  ami_id         = var.ami_id
+  name           = var.name
+  email          = var.email
+  subnet         = module.sub.subnet
+  security_group = module.sub.security_group
 }
 
+
 output "website_ip" {
-  value = aws_instance.web.public_ip
+  value = module.app.public_ip
 }
