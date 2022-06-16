@@ -11,7 +11,7 @@ terraform {
 resource "aws_vpc" "vpc" {
   cidr_block = var.vpc_cidr
   tags = {
-    Name  = "test-vpc"
+    Name  = "${var.name}-vpc"
     email = var.email
   }
 }
@@ -19,7 +19,7 @@ resource "aws_vpc" "vpc" {
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
   tags = {
-    Name  = "test-gateway"
+    Name  = "${var.name}-gateway"
     email = var.email
   }
 }
@@ -28,7 +28,7 @@ resource "aws_subnet" "subnet_public" {
   vpc_id     = aws_vpc.vpc.id
   cidr_block = var.subnet_cidr
   tags = {
-    Name  = "test-subnet"
+    Name  = "${var.name}-subnet"
     email = var.email
   }
 }
@@ -41,8 +41,8 @@ resource "aws_route_table" "rtb_public" {
     gateway_id = aws_internet_gateway.igw.id
   }
   tags = {
-    Name  = "test-route_table"
-    email = "spasov@hashicorp.com"
+    Name  = "${var.name}-route_table"
+    email = var.email
   }
 }
 
@@ -52,7 +52,7 @@ resource "aws_route_table_association" "rta_subnet_public" {
 }
 
 resource "aws_security_group" "sg_80" {
-  name   = "test_sg80"
+  name   = "${var.name}_sg80"
   vpc_id = aws_vpc.vpc.id
 
   ingress {
@@ -78,7 +78,7 @@ resource "aws_instance" "web" {
   associate_public_ip_address = true
 
   tags = {
-    Name  = "test-ec2"
+    Name  = "${var.name}-ec2"
     email = var.email
   }
 }
